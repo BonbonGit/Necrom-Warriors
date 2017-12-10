@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Find The Number</title>
+    <script>
+      function sendReq(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+
+          if(this.readyState == 4 && this.status == 200) {
+            document.getElementById('roomList').innerHTML = this.responseText;
+          }
+        };
+
+        xhttp.open("GET", "/html-css/roomList.html", true);
+        xhttp.send();
+      }
+    </script>
+  </head>
+  <body onload="sendReq();">
+    <h1> Find The Number </h1>
+
+    <h2> Bienvenu dans le hub du jeu! Choisisez un salon:</h2>
+    <ul id="roomList">
+
+    </ul>
+  </body>
+</html>
